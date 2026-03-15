@@ -172,7 +172,8 @@ function SendMoney() {
 
   return (
 
-    <div style={{ padding: "30px" }}>
+    <div className="container">
+    {/* <div style={{ padding: "30px" }}> */}
 
       <h1>Send Money</h1>
 

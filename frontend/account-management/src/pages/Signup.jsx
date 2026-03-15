@@ -35,8 +35,8 @@ function Signup() {
   }
 
   return (
-
-    <div>
+<div className="container">
+    
 
       <h2>Signup</h2>
 

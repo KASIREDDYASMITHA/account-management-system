@@ -29,9 +29,11 @@ function Statement() {
 
   return (
     <div>
-      <h1>Transaction History</h1>
+      {/* <h1>Transaction History</h1> */}
 
-      <table border="1">
+      <h1 style={{textAlign:"center"}}>Transaction History</h1>
+
+<table>
 
         <thead>
           <tr>
