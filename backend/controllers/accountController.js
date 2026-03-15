@@ -133,33 +133,3 @@ export const getUsers = async (req, res) => {
 
   res.json(data);
 };
-// export const getUsers = async (req, res) => {
-
-//   const currentUserId = req.user.id
-
-//   try {
-
-//     const { data, error } = await supabase
-//       .from("users")
-//       .select("id, name, email")
-//       .neq("id", currentUserId)
-
-//     if (error) {
-//       return res.status(400).json({ message: error.message })
-//     }
-
-//     res.json(data)
-
-//   } catch (error) {
-//     res.status(500).json({ message: error.message })
-//   }
-
-// }
-
-
-
-
-
-
-
-

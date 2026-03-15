@@ -1,49 +1,39 @@
-import { useState, useContext } from "react"
-import API from "../services/api"
-import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
+import { useState, useContext } from "react";
+import API from "../services/api";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const { login } = useContext(AuthContext)
+  const { login } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
-
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-
       const res = await API.post("/auth/login", {
         email,
-        password
-      })
+        password,
+      });
 
-      login(res.data.token)
+      login(res.data.token);
 
-      navigate("/dashboard")
-
+      navigate("/dashboard");
     } catch (error) {
-
-      alert(error.response?.data?.message || "Login failed")
-
+      alert(error.response?.data?.message || "Login failed");
     }
-
-  }
+  };
 
   return (
-
-//    <div className="container">
+    
     <div className="card">
-
       <h2>Login</h2>
 
       <form onSubmit={handleLogin}>
-
         <input
           type="email"
           placeholder="Email"
@@ -51,7 +41,8 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="password"
@@ -60,16 +51,13 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <button type="submit">Login</button>
-
       </form>
-
     </div>
-
-  )
-
+  );
 }
 
-export default Login
+export default Login;

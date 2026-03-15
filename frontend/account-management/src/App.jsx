@@ -160,39 +160,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* <Route path="/dashboard" element={<h1>Dashboard</h1>} /> */}
-
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <h1>Dashboard</h1>
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/send-money"
-          element={
-            <ProtectedRoute>
-              <h1>Send Money</h1>
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/statement"
-          element={
-            <ProtectedRoute>
-              <h1>Statement</h1>
-            </ProtectedRoute>
-          }
-        />
-        {/* 
-        <Route path="/send-money" element={<h1>Send Money</h1>} />
-
-        <Route path="/statement" element={<h1>Statement</h1>} /> */}
       </Routes>
     </BrowserRouter>
   );
